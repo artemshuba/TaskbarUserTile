@@ -14,7 +14,7 @@
             <Setter Property="FontSize" Value="14" />
         </Style>
     </Window.Resources>
-    
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="15"/>
@@ -30,8 +30,11 @@
                     <TextBlock Text="My settings" Style="{StaticResource LinkStyle}" Margin="23,0,0,0" MouseLeftButtonUp="MySettings_MouseLeftButtonUp"/>
                     <TextBlock Text="My look" Style="{StaticResource LinkStyle}" Margin="23,12,0,0" MouseLeftButtonUp="MyLook_MouseLeftButtonUp"/>
                 </StackPanel>
-                <Image x:Name="Avatar" Width="100" Height="100" HorizontalAlignment="Right" Margin="0,0,18,0"
-                       DockPanel.Dock="Right"/>
+                <Grid Width="100" Height="100" HorizontalAlignment="Right" Margin="0,0,18,0"
+                      DockPanel.Dock="Right">
+                    <Image x:Name="Avatar"/>
+                    <MediaElement x:Name="Player" LoadedBehavior="Manual" MediaEnded="Player_MediaEnded" IsHitTestVisible="False"/>
+                </Grid>
             </DockPanel>
         </Grid>
         <Rectangle Grid.Row="2" Height="1" Fill="#CCCCCC" VerticalAlignment="Top"/>

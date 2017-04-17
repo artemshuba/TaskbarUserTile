@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
@@ -26,15 +27,15 @@ namespace UserTile
             this.Top = (double)SystemInformation.WorkingArea.Height - this.Height - 5.0;
             this.Left = (double)SystemInformation.WorkingArea.Width - this.Width - 10.0;
 
-            if (!string.IsNullOrEmpty(Program.AvatarPath) && File.Exists(Program.AvatarPath))
+            if (!string.IsNullOrEmpty(Program.config.AvatarPath) && File.Exists(Program.config.AvatarPath))
             {
-                if (Program.AvatarPath.EndsWith(".wmv"))
+                if (Program.config.AvatarPath.EndsWith(".wmv"))
                 {
-                    //this.Player.Source = new Uri(Program.AvatarPath, UriKind.Relative);
-                    //this.Player.Play();
+                    this.Player.Source = new Uri(Program.config.AvatarPath, UriKind.Relative);
+                    this.Player.Play();
                 }
                 else
-                    this.Avatar.Source = new BitmapImage(new Uri(Program.AvatarPath, UriKind.RelativeOrAbsolute));
+                    this.Avatar.Source = new BitmapImage(new Uri(Program.config.AvatarPath, UriKind.RelativeOrAbsolute));
             }
             else
                 this.Avatar.Source = !File.Exists(Path.GetTempPath() + "\\" + Environment.UserName + ".bmp") ? (ImageSource)new BitmapImage(new Uri(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Resources\\userpic.png")) : (ImageSource)new BitmapImage(new Uri(Path.GetTempPath() + "\\" + Environment.UserName + ".bmp"));
@@ -81,6 +82,12 @@ namespace UserTile
         private void MyLook_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             Process.Start("control.exe", "userpasswords");
+        }
+
+        private void Player_MediaEnded(object sender, RoutedEventArgs e)
+        {
+            this.Player.Position = TimeSpan.FromMilliseconds(0.0);
+            this.Player.Play();
         }
     }
 }
