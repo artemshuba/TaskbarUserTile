@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserTile", "UserTile\UserTile.csproj", "{D69E4ECC-8BD8-45C7-B367-AF575B512F72}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserTileLib", "UserTileLib\UserTileLib.csproj", "{9289FB37-36CC-4BE5-8128-6A2B31CD9031}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D69E4ECC-8BD8-45C7-B367-AF575B512F72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D69E4ECC-8BD8-45C7-B367-AF575B512F72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D69E4ECC-8BD8-45C7-B367-AF575B512F72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D69E4ECC-8BD8-45C7-B367-AF575B512F72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9289FB37-36CC-4BE5-8128-6A2B31CD9031}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9289FB37-36CC-4BE5-8128-6A2B31CD9031}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9289FB37-36CC-4BE5-8128-6A2B31CD9031}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9289FB37-36CC-4BE5-8128-6A2B31CD9031}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
